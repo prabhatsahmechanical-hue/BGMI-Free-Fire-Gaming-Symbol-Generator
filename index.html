@@ -3,72 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BGMI & Free Fire Name Generator | Stylish Symbols & Invisible Name</title>
-  <meta name="description" content="Generate cool and stylish names for BGMI & Free Fire with trendy symbols, invisible spaces, and fancy fonts. Copy with one click!">
+  <title>🔥 Pro Gaming Name & Symbol Generator | BGMI & Free Fire</title>
+  <meta name="description" content="Generate cool neon symbols, invisible space, and pro fancy names for BGMI, Free Fire, and PUBG. One-click copy!">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
-    body { background-color: #0f172a; color: #f8fafc; display: flex; flex-direction: column; align-items: center; padding: 20px; }
-    .container { max-width: 600px; width: 100%; text-align: center; }
-    h1 { color: #38bdf8; margin-bottom: 10px; font-size: 1.8rem; }
-    p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
-    input { width: 100%; padding: 14px; border-radius: 8px; border: 2px solid #334155; background: #1e293b; color: #fff; font-size: 1rem; outline: none; margin-bottom: 20px; }
-    input:focus { border-color: #38bdf8; }
-    .card-list { display: flex; flex-direction: column; gap: 12px; }
-    .card { background: #1e293b; padding: 14px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #334155; }
-    .card span { font-size: 1.1rem; word-break: break-all; }
-    .copy-btn { background: #0284c7; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-    .copy-btn:hover { background: #0369a1; }
-    .copied { background: #22c55e !important; }
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #151c2e;
+      --accent: #00f2fe;
+      --accent-pink: #4facfe;
+      --text: #f1f5f9;
+      --border: #232d48;
+    }
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    body { background-color: var(--bg); color: var(--text); padding: 20px 10px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+    
+    header { text-align: center; margin-bottom: 25px; }
+    h1 { font-family: 'Orbitron', sans-serif; font-size: 2rem; background: linear-gradient(45deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 242, 254, 0.3); }
+    p.subtitle { color: #94a3b8; font-size: 0.9rem; margin-top: 5px; }
+
+    .main-container { width: 100%; max-width: 700px; }
+    
+    /* Input Box */
+    .input-box { position: relative; margin-bottom: 20px; }
+    .input-box input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--border); background: var(--card-bg); color: #fff; font-size: 1.1rem; outline: none; transition: 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
+    .input-box input:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
+    .tab-btn { background: var(--card-bg); color: #94a3b8; border: 1px solid var(--border); padding: 10px 18px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+    .tab-btn.active, .tab-btn:hover { background: linear-gradient(45deg, #00f2fe, #4facfe); color: #000; border-color: transparent; box-shadow: 0 0 10px rgba(0, 242, 254, 0.5); }
+
+    /* Output Grid */
+    .results-grid { display: flex; flex-direction: column; gap: 12px; }
+    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
+    .name-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .name-text { font-size: 1.1rem; word-break: break-all; color: #fff; }
+    
+    .copy-btn { background: rgba(0, 242, 254, 0.1); color: var(--accent); border: 1px solid var(--accent); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+    .copy-btn:hover { background: var(--accent); color: #000; }
+    .copied { background: #22c55e !important; color: #fff !important; border-color: #22c55e !important; }
+
+    /* Special Invisible Space Box */
+    .invisible-box { background: linear-gradient(135deg, #1e2640, #151c2e); border: 1px dashed var(--accent); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; }
+    .invisible-box h3 { font-family: 'Orbitron', sans-serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 8px; }
+    .invisible-box p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px; }
+
+    /* Symbols Grid */
+    .symbols-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 10px; }
+    .symbol-btn { background: var(--card-bg); border: 1px solid var(--border); padding: 12px; border-radius: 8px; color: #fff; font-size: 1.2rem; cursor: pointer; text-align: center; transition: 0.2s; }
+    .symbol-btn:hover { border-color: var(--accent); background: rgba(0,242,254,0.1); }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>🔥 BGMI & Free Fire Name Generator</h1>
-    <p>Apna naam likho aur cool gaming symbols waala name copy karo!</p>
-    
-    <input type="text" id="userInput" placeholder="Apna Naam Yahan Likho..." oninput="generateNames()">
+  <header>
+    <h1>🎮 GAMER NAME STUDIO</h1>
+    <p class="subtitle">Generate Pro BGMI & Free Fire Names, Symbols & Invisible Space</p>
+  </header>
 
-    <div class="card-list" id="results">
-      <!-- Generated names will appear here -->
+  <div class="main-container">
+    
+    <div class="input-box">
+      <input type="text" id="username" placeholder="Type your name here (e.g., LEGEND)..." oninput="renderAll()">
     </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('stylish')">🔥 Stylish Names</button>
+      <button class="tab-btn" onclick="switchTab('invisible')">👻 Invisible Name</button>
+      <button class="tab-btn" onclick="switchTab('symbols')">⚡ Gaming Symbols</button>
+    </div>
+
+    <!-- TAB 1: STYLISH NAMES -->
+    <div id="tab-stylish" class="tab-content">
+      <div class="results-grid" id="stylish-results"></div>
+    </div>
+
+    <!-- TAB 2: INVISIBLE NAME -->
+    <div id="tab-invisible" class="tab-content" style="display: none;">
+      <div class="invisible-box">
+        <h3>BGMI / FF Invisible Space Character</h3>
+        <p>Copy this special unicode character to hide your name in BGMI or Free Fire!</p>
+        <button class="copy-btn" style="padding: 12px 24px; font-size: 1rem;" onclick="copyInvisible(this)">Copy Invisible Space 👻</button>
+      </div>
+    </div>
+
+    <!-- TAB 3: SYMBOLS LIBRARY -->
+    <div id="tab-symbols" class="tab-content" style="display: none;">
+      <div class="symbols-grid" id="symbols-container"></div>
+    </div>
+
   </div>
 
   <script>
-    const prefixes = ["꧁༺", "⚡", "☣️", "⚔️", "🔥", "★[", "︻╦╤─ ", "⧼"];
-    const suffixes = ["༻꧂", "⚡", "☣️", "⚔️", "🔥", "]★", " ─╤╦︻", "⧽"];
+    const symbols = ["꧁༺", "༻꧂", "⚡", "☣️", "⚔️", "🔥", "★", "☠️", "👑", "︻╦╤─", "🎯", "✦", "亗", "ᯓ", "꧅", "☯︎", "〆", "父", "⧼", "⧽"];
 
-    function generateNames() {
-      const input = document.getElementById('userInput').value || "NOOB";
-      const resultsDiv = document.getElementById('results');
-      resultsDiv.innerHTML = "";
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      document.getElementById(`tab-${tabName}`).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
 
-      prefixes.forEach((pre, index) => {
-        const suf = suffixes[index];
-        const formattedName = `${pre} ${input} ${suf}`;
-        
+    function renderAll() {
+      const val = document.getElementById('username').value || "LEGEND";
+      const container = document.getElementById('stylish-results');
+      container.innerHTML = "";
+
+      // Variations
+      const variations = [
+        `꧁༺ ${val} ༻꧂`,
+        `⚡ ${val} ⚡`,
+        `亗 ${val} 亗`,
+        `⚔️ ${val} ⚔️`,
+        `☠️ ${val} ☠️`,
+        `🔥 ${val} 🔥`,
+        `︻╦╤─ ${val} ─╤╦︻`,
+        `┊ ${val} ┊`,
+        `ᯓ ${val} ᯓ`,
+        `★ [${val}] ★`
+      ];
+
+      variations.forEach(text => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'name-card';
         card.innerHTML = `
-          <span>${formattedName}</span>
-          <button class="copy-btn" onclick="copyText('${formattedName}', this)">Copy</button>
+          <span class="name-text">${text}</span>
+          <button class="copy-btn" onclick="copyText('${text}', this)">Copy</button>
         `;
-        resultsDiv.appendChild(card);
+        container.appendChild(card);
       });
     }
 
     function copyText(text, btn) {
       navigator.clipboard.writeText(text);
+      const originalText = btn.innerText;
       btn.innerText = "Copied! 👍";
       btn.classList.add('copied');
       setTimeout(() => {
-        btn.innerText = "Copy";
+        btn.innerText = originalText;
+        btn.classList.remove('copied');
+      }, 1500);
+    }
+
+    function copyInvisible(btn) {
+      // Hangul filler character used for invisible space in games
+      navigator.clipboard.writeText("ㅤ"); 
+      btn.innerText = "Copied Invisible Space! 👻";
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerText = "Copy Invisible Space 👻";
         btn.classList.remove('copied');
       }, 2000);
     }
 
-    // Initial load
-    generateNames();
+    function loadSymbols() {
+      const grid = document.getElementById('symbols-container');
+      symbols.forEach(sym => {
+        const btn = document.createElement('button');
+        btn.className = 'symbol-btn';
+        btn.innerText = sym;
+        btn.onclick = () => copyText(sym, btn);
+        grid.appendChild(btn);
+      });
+    }
+
+    // Init
+    renderAll();
+    loadSymbols();
   </script>
 
 </body>
