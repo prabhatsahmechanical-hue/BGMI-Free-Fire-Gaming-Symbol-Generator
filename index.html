@@ -3,76 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔥 Pro Gaming Name & Symbol Generator | BGMI & Free Fire</title>
-  <meta name="description" content="Generate cool neon symbols, invisible space, and pro fancy names for BGMI, Free Fire, and PUBG. One-click copy!">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>🔥 Pro Gamer Name Studio | BGMI & Free Fire Fancy Text Generator</title>
+  <meta name="description" content="Generate 1000+ cool gaming names, symbols, invisible space, and clan tags for BGMI, Free Fire, and PUBG.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f19;
-      --card-bg: #151c2e;
-      --accent: #00f2fe;
-      --accent-pink: #4facfe;
-      --text: #f1f5f9;
-      --border: #232d48;
+      --bg-dark: #080b12;
+      --card-bg: rgba(21, 28, 46, 0.7);
+      --border-color: #1e293b;
+      --neon-cyan: #00f2fe;
+      --neon-purple: #9d4edd;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
     }
-    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
-    body { background-color: var(--bg); color: var(--text); padding: 20px 10px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-    
-    header { text-align: center; margin-bottom: 25px; }
-    h1 { font-family: 'Orbitron', sans-serif; font-size: 2rem; background: linear-gradient(45deg, #00f2fe, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 242, 254, 0.3); }
-    p.subtitle { color: #94a3b8; font-size: 0.9rem; margin-top: 5px; }
 
-    .main-container { width: 100%; max-width: 700px; }
+    * { box-sizing: border-box; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 0; }
     
-    /* Input Box */
-    .input-box { position: relative; margin-bottom: 20px; }
-    .input-box input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--border); background: var(--card-bg); color: #fff; font-size: 1.1rem; outline: none; transition: 0.3s; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); }
-    .input-box input:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
+    body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.15), transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(157, 78, 221, 0.1), transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-    /* Tabs */
-    .tabs { display: flex; gap: 10px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 5px; }
-    .tab-btn { background: var(--card-bg); color: #94a3b8; border: 1px solid var(--border); padding: 10px 18px; border-radius: 20px; cursor: pointer; white-space: nowrap; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
-    .tab-btn.active, .tab-btn:hover { background: linear-gradient(45deg, #00f2fe, #4facfe); color: #000; border-color: transparent; box-shadow: 0 0 10px rgba(0, 242, 254, 0.5); }
+    header { text-align: center; margin-bottom: 30px; }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+    }
+    p.subtitle { color: var(--text-sub); font-size: 1rem; margin-top: 6px; font-weight: 500; }
 
-    /* Output Grid */
-    .results-grid { display: flex; flex-direction: column; gap: 12px; }
-    .name-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
-    .name-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .name-text { font-size: 1.1rem; word-break: break-all; color: #fff; }
+    .app-container { width: 100%; max-width: 850px; }
+
+    /* Search & Input Box */
+    .input-section {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      margin-bottom: 25px;
+    }
+    .input-box {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 2px solid var(--border-color);
+      background: rgba(10, 15, 26, 0.8);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .input-box:focus {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    }
+
+    /* Tabs Bar */
+    .tabs-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+    .tab-btn {
+      background: var(--card-bg);
+      color: var(--text-sub);
+      border: 1px solid var(--border-color);
+      padding: 12px 22px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      white-space: nowrap;
+      transition: 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      color: #000;
+      border-color: transparent;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    }
+
+    /* Results Grid */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 15px; }
     
-    .copy-btn { background: rgba(0, 242, 254, 0.1); color: var(--accent); border: 1px solid var(--accent); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
-    .copy-btn:hover { background: var(--accent); color: #000; }
-    .copied { background: #22c55e !important; color: #fff !important; border-color: #22c55e !important; }
+    .name-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .name-card:hover {
+      border-color: var(--neon-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0, 242, 254, 0.15);
+    }
+    .name-text { font-size: 1.2rem; font-weight: 600; color: #fff; word-break: break-all; }
+
+    /* Action Buttons */
+    .copy-btn {
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--neon-cyan);
+      border: 1px solid var(--neon-cyan);
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .copy-btn:hover { background: var(--neon-cyan); color: #000; }
+    .copied { background: #10b981 !important; color: #fff !important; border-color: #10b981 !important; }
 
     /* Special Invisible Space Box */
-    .invisible-box { background: linear-gradient(135deg, #1e2640, #151c2e); border: 1px dashed var(--accent); border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; }
-    .invisible-box h3 { font-family: 'Orbitron', sans-serif; color: var(--accent); font-size: 1.1rem; margin-bottom: 8px; }
-    .invisible-box p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px; }
+    .invisible-box {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+      border: 1px dashed var(--neon-cyan);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    .invisible-box h2 { font-family: 'Orbitron', sans-serif; color: var(--neon-cyan); margin-bottom: 10px; }
+    .invisible-box p { color: var(--text-sub); margin-bottom: 20px; font-size: 1.05rem; }
 
     /* Symbols Grid */
-    .symbols-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 10px; }
-    .symbol-btn { background: var(--card-bg); border: 1px solid var(--border); padding: 12px; border-radius: 8px; color: #fff; font-size: 1.2rem; cursor: pointer; text-align: center; transition: 0.2s; }
-    .symbol-btn:hover { border-color: var(--accent); background: rgba(0,242,254,0.1); }
+    .symbols-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 12px;
+    }
+    .symbol-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .symbol-card:hover {
+      border-color: var(--neon-cyan);
+      background: rgba(0, 242, 254, 0.1);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .results-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.6rem; }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>🎮 GAMER NAME STUDIO</h1>
-    <p class="subtitle">Generate Pro BGMI & Free Fire Names, Symbols & Invisible Space</p>
+    <h1>🎮 PRO GAMER STUDIO</h1>
+    <p class="subtitle">Ultimate Gaming Name, Symbols & Invisible Character Generator</p>
   </header>
 
-  <div class="main-container">
+  <div class="app-container">
     
-    <div class="input-box">
-      <input type="text" id="username" placeholder="Type your name here (e.g., LEGEND)..." oninput="renderAll()">
+    <!-- Input Field -->
+    <div class="input-section">
+      <input type="text" id="username" class="input-box" placeholder="Type your name here (e.g. LEGEND, DEVIL, VIPER)..." oninput="generateNames()">
     </div>
 
     <!-- Navigation Tabs -->
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('stylish')">🔥 Stylish Names</button>
-      <button class="tab-btn" onclick="switchTab('invisible')">👻 Invisible Name</button>
-      <button class="tab-btn" onclick="switchTab('symbols')">⚡ Gaming Symbols</button>
+    <div class="tabs-bar">
+      <button class="tab-btn active" onclick="switchTab('stylish', this)">🔥 Stylish Names</button>
+      <button class="tab-btn" onclick="switchTab('symbols', this)">⚡ 50+ Gaming Symbols</button>
+      <button class="tab-btn" onclick="switchTab('invisible', this)">👻 Invisible Name Space</button>
     </div>
 
     <!-- TAB 1: STYLISH NAMES -->
@@ -80,53 +204,84 @@
       <div class="results-grid" id="stylish-results"></div>
     </div>
 
-    <!-- TAB 2: INVISIBLE NAME -->
-    <div id="tab-invisible" class="tab-content" style="display: none;">
-      <div class="invisible-box">
-        <h3>BGMI / FF Invisible Space Character</h3>
-        <p>Copy this special unicode character to hide your name in BGMI or Free Fire!</p>
-        <button class="copy-btn" style="padding: 12px 24px; font-size: 1rem;" onclick="copyInvisible(this)">Copy Invisible Space 👻</button>
-      </div>
+    <!-- TAB 2: SYMBOLS LIBRARY -->
+    <div id="tab-symbols" class="tab-content" style="display: none;">
+      <div class="symbols-grid" id="symbols-results"></div>
     </div>
 
-    <!-- TAB 3: SYMBOLS LIBRARY -->
-    <div id="tab-symbols" class="tab-content" style="display: none;">
-      <div class="symbols-grid" id="symbols-container"></div>
+    <!-- TAB 3: INVISIBLE NAME -->
+    <div id="tab-invisible" class="tab-content" style="display: none;">
+      <div class="invisible-box">
+        <h2>BGMI / Free Fire Invisible Space</h2>
+        <p>Use this special Unicode character to make your name completely invisible in-game!</p>
+        <button class="copy-btn" style="padding: 14px 28px; font-size: 1.1rem;" onclick="copyInvisible(this)">Copy Invisible Character 👻</button>
+      </div>
     </div>
 
   </div>
 
   <script>
-    const symbols = ["꧁༺", "༻꧂", "⚡", "☣️", "⚔️", "🔥", "★", "☠️", "👑", "︻╦╤─", "🎯", "✦", "亗", "ᯓ", "꧅", "☯︎", "〆", "父", "⧼", "⧽"];
+    // Huge Symbols Library
+    const gamingSymbols = [
+      "꧁༺", "༻꧂", "⚡", "☣️", "⚔️", "🔥", "★", "☠️", "👑", "︻╦╤─", 
+      "🎯", "✦", "亗", "ᯓ", "꧅", "☯︎", "〆", "父", "⧼", "⧽", 
+      "꧁", "༻", "☣", "☬", "☫", "࿐", "𓆩", "𓆪", "ㄔ", "✈", 
+      "☁", "🖤", "🗡️", "🛡️", "🔱", "𓄂", "★彡", "彡★", "『", "』",
+      "⁓", "†", "∆", "♠", "♣", "♦", "♥", "░", "█", "☯"
+    ];
 
-    function switchTab(tabName) {
-      document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      
-      document.getElementById(`tab-${tabName}`).style.display = 'block';
-      event.currentTarget.classList.add('active');
+    // Font Converters
+    function toMathematicalBold(str) {
+      const normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      const bold   = "𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵";
+      return str.split('').map(c => { const i = normal.indexOf(c); return i !== -1 ? bold[i] : c; }).join('');
     }
 
-    function renderAll() {
-      const val = document.getElementById('username').value || "LEGEND";
+    function toGothic(str) {
+      const normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      const gothic = "𝔄𝔅ℭ𝔇𝔈𝔉𝔁ℌℑ𝔍𝔎𝔏𝔍𝔝𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔟𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷";
+      return str.split('').map(c => { const i = normal.indexOf(c); return i !== -1 ? gothic[i] : c; }).join('');
+    }
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(`tab-${tabId}`).style.display = 'block';
+      btn.classList.add('active');
+    }
+
+    function generateNames() {
+      const val = document.getElementById('username').value.trim() || "LEGEND";
       const container = document.getElementById('stylish-results');
       container.innerHTML = "";
 
-      // Variations
-      const variations = [
+      const boldVal = toMathematicalBold(val);
+      const gothicVal = toGothic(val);
+
+      const templates = [
         `꧁༺ ${val} ༻꧂`,
-        `⚡ ${val} ⚡`,
-        `亗 ${val} 亗`,
-        `⚔️ ${val} ⚔️`,
-        `☠️ ${val} ☠️`,
-        `🔥 ${val} 🔥`,
+        `亗 ${boldVal} 亗`,
+        `⚡ ${val.toUpperCase()} ⚡`,
+        `⚔️ ${gothicVal} ⚔️`,
+        `👑 [ ${boldVal} ] 👑`,
         `︻╦╤─ ${val} ─╤╦︻`,
-        `┊ ${val} ┊`,
-        `ᯓ ${val} ᯓ`,
-        `★ [${val}] ★`
+        `𓆩 ${boldVal} 𓆪`,
+        `☠️ ${val} ☠️`,
+        `『VIPER』${val}`,
+        `〆 ${boldVal} 〆`,
+        `꧁ ${val} ꧂`,
+        `🔥 ${gothicVal} 🔥`,
+        `ᯓ ${boldVal} ᯓ`,
+        `父 ${val} 父`,
+        `✦ ${boldVal} ✦`,
+        `★ ${val} ★`,
+        `┊ ${boldVal} ┊`,
+        `🎯 ${val} 🎯`,
+        `☬ ${boldVal} ☬`,
+        `⧼ ${val} ⧽`
       ];
 
-      variations.forEach(text => {
+      templates.forEach(text => {
         const card = document.createElement('div');
         card.className = 'name-card';
         card.innerHTML = `
@@ -134,6 +289,19 @@
           <button class="copy-btn" onclick="copyText('${text}', this)">Copy</button>
         `;
         container.appendChild(card);
+      });
+    }
+
+    function renderSymbols() {
+      const grid = document.getElementById('symbols-results');
+      grid.innerHTML = "";
+      gamingSymbols.forEach(sym => {
+        const div = document.createElement('div');
+        div.className = 'symbol-card';
+        div.innerText = sym;
+        div.title = "Click to Copy";
+        div.onclick = function() { copyText(sym, this); };
+        grid.appendChild(div);
       });
     }
 
@@ -149,30 +317,18 @@
     }
 
     function copyInvisible(btn) {
-      // Hangul filler character used for invisible space in games
       navigator.clipboard.writeText("ㅤ"); 
       btn.innerText = "Copied Invisible Space! 👻";
       btn.classList.add('copied');
       setTimeout(() => {
-        btn.innerText = "Copy Invisible Space 👻";
+        btn.innerText = "Copy Invisible Character 👻";
         btn.classList.remove('copied');
       }, 2000);
     }
 
-    function loadSymbols() {
-      const grid = document.getElementById('symbols-container');
-      symbols.forEach(sym => {
-        const btn = document.createElement('button');
-        btn.className = 'symbol-btn';
-        btn.innerText = sym;
-        btn.onclick = () => copyText(sym, btn);
-        grid.appendChild(btn);
-      });
-    }
-
     // Init
-    renderAll();
-    loadSymbols();
+    generateNames();
+    renderSymbols();
   </script>
 
 </body>
