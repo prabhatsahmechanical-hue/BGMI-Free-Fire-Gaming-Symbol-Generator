@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMI & Free Fire Name Generator | Stylish Symbols & Invisible Name</title>
+  <meta name="description" content="Generate cool and stylish names for BGMI & Free Fire with trendy symbols, invisible spaces, and fancy fonts. Copy with one click!">
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+    body { background-color: #0f172a; color: #f8fafc; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+    .container { max-width: 600px; width: 100%; text-align: center; }
+    h1 { color: #38bdf8; margin-bottom: 10px; font-size: 1.8rem; }
+    p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
+    input { width: 100%; padding: 14px; border-radius: 8px; border: 2px solid #334155; background: #1e293b; color: #fff; font-size: 1rem; outline: none; margin-bottom: 20px; }
+    input:focus { border-color: #38bdf8; }
+    .card-list { display: flex; flex-direction: column; gap: 12px; }
+    .card { background: #1e293b; padding: 14px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #334155; }
+    .card span { font-size: 1.1rem; word-break: break-all; }
+    .copy-btn { background: #0284c7; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+    .copy-btn:hover { background: #0369a1; }
+    .copied { background: #22c55e !important; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔥 BGMI & Free Fire Name Generator</h1>
+    <p>Apna naam likho aur cool gaming symbols waala name copy karo!</p>
+    
+    <input type="text" id="userInput" placeholder="Apna Naam Yahan Likho..." oninput="generateNames()">
+
+    <div class="card-list" id="results">
+      <!-- Generated names will appear here -->
+    </div>
+  </div>
+
+  <script>
+    const prefixes = ["꧁༺", "⚡", "☣️", "⚔️", "🔥", "★[", "︻╦╤─ ", "⧼"];
+    const suffixes = ["༻꧂", "⚡", "☣️", "⚔️", "🔥", "]★", " ─╤╦︻", "⧽"];
+
+    function generateNames() {
+      const input = document.getElementById('userInput').value || "NOOB";
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = "";
+
+      prefixes.forEach((pre, index) => {
+        const suf = suffixes[index];
+        const formattedName = `${pre} ${input} ${suf}`;
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <span>${formattedName}</span>
+          <button class="copy-btn" onclick="copyText('${formattedName}', this)">Copy</button>
+        `;
+        resultsDiv.appendChild(card);
+      });
+    }
+
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text);
+      btn.innerText = "Copied! 👍";
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerText = "Copy";
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+
+    // Initial load
+    generateNames();
+  </script>
+
+</body>
+</html>
